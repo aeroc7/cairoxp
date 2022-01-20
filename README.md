@@ -14,6 +14,26 @@ Due to the rendering occuring on a background thread, separate from X-Plane, the
 Firstly, you need to clone the repository: `git clone https://github.com/aeroc7/cairoxp.git`
 
 ## Windows (using MinGW on [MSYS2](https://www.msys2.org/))
+You require the following dependencies:
+```
+pacman -S mingw-w64-x86_64-toolchain
+pacman -S mingw64/mingw-w64-x86_64-cmake
+pacman -S mingw64/mingw-w64-x86_64-make
+pacman -S mingw64/mingw-w64-x86_64-meson
+pacman -S mingw64/mingw-w64-x86_64-python3
+pacman -S mingw64/mingw-w64-x86_64-python3-setuptools
+pacman -S mingw64/mingw-w64-x86_64-python3-pip
+pacman -S msys/make
+pacman -S msys/patch
+pacman -S msys/pkg-config
+```
+- `cd` into the cloned folder (ex. `cd cairoxp`)
+- Create a build directory `mkdir build && cd build`
+- Generate a release build with CMake `cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ..`
+  - You may also want to set an install location with `-DCMAKE_INSTALL_PREFIX=your/install/directory` (The proper X-Plane plugin folder structure will be generated automatically as well)
+- Start the build process with `make -j[num_cpus + 1]`
+  - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1
+- Install with `make install`
 
 ## Linux (tested on Ubuntu 21.10)
 You require the following dependencies:
@@ -24,6 +44,6 @@ You require the following dependencies:
 - Generate a release build with CMake `cmake -DCMAKE_BUILD_TYPE=Release ..`
   - You may also want to set an install location with `-DCMAKE_INSTALL_PREFIX=your/install/directory` (The proper X-Plane plugin folder structure will be generated automatically as well)
 - Start the build process with `make -j[num_cpus + 1]`
-  - Replace the `[num_cpus + 1]` with the number of physical threads your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
+  - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
 - Install with `make install`
 
