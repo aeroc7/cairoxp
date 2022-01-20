@@ -24,10 +24,10 @@ ExternalProject_Add(cairo-build
                         -D fontconfig=disabled -D freetype=enabled -D cogl=disabled
                         -D directfb=disabled -D gl-backend=disabled -D glesv2=disabled
                         -D glesv3=disabled -D drm=disabled -D openvg=disabled -D png=disabled
-                        -D quartz=disabled -D quartz-image=disabled -D qt=disabled -D tee=disabled
-                        -D xcb=disabled -D xlib=disabled -D xlib-xcb=disabled -D zlib=disabled
+                        -D qt=disabled -D tee=disabled
+                        -D xcb=disabled -D xlib=disabled -D zlib=disabled
                         -D tests=disabled -D gtk2-utils=disabled -D glib=disabled -D spectre=disabled
-                        -D symbol-lookup=disabled --pkg-config-path
+                        --pkg-config-path
                         "${freetype_INCLUDE_DIR}/../../lib/pkgconfig/:${pixman_INCLUDE_DIR}/../../lib/pkgconfig"
     PATCH_COMMAND       patch
                         -u <SOURCE_DIR>/src/cairo-misc.c
