@@ -1,0 +1,5 @@
+add_subdirectory(pixman)
+add_subdirectory(freetype)
+add_subdirectory(cairo)
+add_subdirectory(glew)
+add_subdirectory(xpsdk)

@@ -1,0 +1,11 @@
+--- src/cairo-misc.c	2021-05-23 21:02:09.675782600 -0700
++++ src/cairo-misc.c	2021-05-23 21:03:27.210000000 -0700
+@@ -907,7 +907,7 @@
+ _cairo_fopen (const char *filename, const char *mode, FILE **file_out)
+ {
+     FILE *result;
+-#ifdef _WIN32 /* also defined on x86_64 */
++#ifdef _XXXX_ /* also defined on x86_64 */
+     uint16_t *filename_w;
+     uint16_t *mode_w;
+     cairo_status_t status;

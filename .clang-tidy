@@ -1,0 +1,5 @@
+---
+Checks:          '*,-llvm*,-concurrency-*,-performance-*,-portability-*,-modernize-*,-google-*,-fuchsia-default-arguments-calls*'
+WarningsAsErrors: '*'
+HeaderFilterRegex: ''
+FormatStyle:     none
