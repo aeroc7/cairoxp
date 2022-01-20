@@ -10,8 +10,20 @@ Due to the rendering occuring on a background thread, separate from X-Plane, the
 
 ![Performance](https://github.com/aeroc7/cairoxp/blob/main/screenshots/performance.png)
 
-## Building on Windows (using MinGW on [MSYS2](https://www.msys2.org/))
+# Building
+Firstly, you need to clone the repository: `git clone https://github.com/aeroc7/cairoxp.git`
 
-## Building on Ubuntu (only tested on 21.10)
+## Windows (using MinGW on [MSYS2](https://www.msys2.org/))
+
+## Linux-y (tested on Ubuntu 21.10)
 You require the following dependencies:
-`sudo apt-get install build-essential cmake meson libglu1-mesa-dev mesa-common-dev`
+`sudo apt-get install build-essential cmake meson libglu1-mesa-dev mesa-common-dev python3 python3-pip python3-setuptools`
+
+- `cd` into the cloned folder (ex. `cd cairoxp`)
+- Create a build directory `mkdir build && cd build`
+- Generate a release build with CMake `cmake -DCMAKE_BUILD_TYPE=Release ..`
+  - You may also want to set an install location with `-DCMAKE_INSTALL_PREFIX=your/install/directory` (The proper X-Plane plugin folder structure will be generated automatically as well)
+- Start the build process with `make -j[num_cpus + 1]`
+  - Replace the `[num_cpus + 1]` with the number of physical threads your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
+- Install with `make install`
+
