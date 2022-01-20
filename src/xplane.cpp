@@ -1,6 +1,7 @@
 #include <XPLMPlugin.h>
 
 #include <cstring>
+#include <iostream>
 #include <memory>
 
 #include "draw.h"

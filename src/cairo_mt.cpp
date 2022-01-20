@@ -15,6 +15,11 @@ public:
         cr = cairo_create(surface);
     }
 
+    CairoSufaceHandler(const CairoSufaceHandler &) = delete;
+    CairoSufaceHandler(CairoSufaceHandler &&) = delete;
+    CairoSufaceHandler &operator=(const CairoSufaceHandler &) = delete;
+    CairoSufaceHandler &operator=(CairoSufaceHandler &&) = delete;
+
     cairo_t *get() const noexcept { return cr; }
     cairo_surface_t *get_surface() const noexcept { return surface; }
     operator cairo_t *() const noexcept { return get(); }
@@ -85,7 +90,7 @@ void CairoMt::render_loop() {
         void *surf_data = cairo_image_surface_get_data(surf.get_surface());
         void *pbo_buf = pbo->get_back_buffer();
 
-        if (surf_data && pbo_buf) {
+        if (surf_data != nullptr && pbo_buf != nullptr) {
             std::memcpy(pbo_buf, surf_data, static_cast<std::size_t>(stride * surf_height));
             pbo->finish_back_buffer();
         }

@@ -35,15 +35,14 @@ void PboHdlr::finish_back_buffer() {
 }
 
 void PboHdlr::bind_front_buffer() {
-    bool us_back_buf_done;
-    bool us_back_buf_ready;
-    GLuint us_back_index;
-    GLuint us_front_index;
+    bool us_back_buf_done{};
+    bool us_back_buf_ready{};
+    GLuint us_back_index{};
+    GLuint us_front_index{};
 
     {
         std::lock_guard<std::mutex> lock(mut);
         us_back_buf_done = mt.back_buffer_done;
-        us_back_buf_ready = mt.back_buffer_ready;
         us_back_index = mt.back_buf_index;
         us_front_index = mt.front_buf_index;
     }

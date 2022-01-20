@@ -27,7 +27,7 @@ Draw::Draw() {
 // Important: cairo_draw_* functions are called from the render thread.
 // X-Plane SDK functions CAN NOT be called on threads other than the main one
 // Do not call X-Plane SDK functions from these (3) functions.
-void Draw::cairo_draw_start(cairo_t *) {}
+void Draw::cairo_draw_start([[maybe_unused]] cairo_t *cr) {}
 
 void Draw::cairo_draw_loop(cairo_t *cr) {
     // Clear surface
@@ -49,4 +49,4 @@ void Draw::cairo_draw_loop(cairo_t *cr) {
     cairo_show_text(cr, "Hello, world");
 }
 
-void Draw::cairo_draw_stop(cairo_t *) {}
+void Draw::cairo_draw_stop([[maybe_unused]] cairo_t *cr) {}

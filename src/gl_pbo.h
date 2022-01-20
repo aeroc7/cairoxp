@@ -15,7 +15,7 @@ public:
 
 private:
     GLsizei width{}, height{};
-    void *cur_buffer_handle;
+    void *cur_buffer_handle{nullptr};
     GLuint pbo_bufs[2];
 
     struct {
