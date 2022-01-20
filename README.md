@@ -15,7 +15,7 @@ Firstly, you need to clone the repository: `git clone https://github.com/aeroc7/
 
 ## Windows (using MinGW on [MSYS2](https://www.msys2.org/))
 
-## Linux-y (tested on Ubuntu 21.10)
+## Linux (tested on Ubuntu 21.10)
 You require the following dependencies:
 `sudo apt-get install build-essential cmake meson libglu1-mesa-dev mesa-common-dev python3 python3-pip python3-setuptools`
 
