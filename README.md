@@ -10,6 +10,15 @@ Due to the rendering occuring on a background thread, separate from X-Plane, the
 
 ![Performance](https://github.com/aeroc7/cairoxp/blob/main/screenshots/performance.png)
 
+## How it works
+[cairo_mt.cpp](https://github.com/aeroc7/cairoxp/blob/main/src/cairo_mt.cpp) provides a wrapper around all of the operations needed in the background. This includes:
+- Managing the render thread that calls the callbacks you provide (start, draw loop, stop)
+- Managing the X-Plane draw callback for the gauges phase
+- Managing the Cairo surface
+- Managing the [PBO](https://www.khronos.org/opengl/wiki/Pixel_Buffer_Object) for asynchronous transfers of the Cairo pixel data, to the OpenGL texture in the X-Plane draw callback
+
+The rest is very straightforward. Once you've initialized GLEW, you can create an instance of the CairoMt class, where you provide `std::function<void(cairo_t *cr)>` callbacks for start, loop, and stop. There is also another parameter where you provide a structure `PanelDims`, which contain the dimensions of your desired texture, and the x, y offset of the texture on X-Plane's panel.png. An example of this is provided in [draw.cpp](https://github.com/aeroc7/cairoxp/blob/main/src/draw.cpp)
+
 # Building
 Firstly, you need to clone the repository: `git clone https://github.com/aeroc7/cairoxp.git`
 
