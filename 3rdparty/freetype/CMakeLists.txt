@@ -7,6 +7,9 @@ include(ExternalProject)
 ExternalProject_Add(freetype-build
     URL                 ${DEP_FREETYPE_LOC}
     URL_HASH            SHA256=0412aba9795726e72a1bc3496c5511236ea5ff20d55f55cb16e48cc60cb178b2
+    PATCH_COMMAND	    patch
+		                -u <SOURCE_DIR>/CMakeLists.txt
+			            -i ${CMAKE_CURRENT_LIST_DIR}/freetype_pc_win.patch
     CMAKE_ARGS          -G "Unix Makefiles"
                         -DCMAKE_BUILD_TYPE=Release
                         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>

@@ -1,0 +1,12 @@
+--- CMakeListsn.txt	2020-10-19 22:13:33.000000000 -0700
++++ CMakeLists.txt	2022-01-20 14:08:57.259453314 -0800
+@@ -491,7 +491,8 @@
+ 
+ if (NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL)
+   # Generate the pkg-config file
+-  if (UNIX)
++  # We need this for our MinGW build
++  if (UNIX OR WIN32)
+     file(READ "${PROJECT_SOURCE_DIR}/builds/unix/freetype2.in" FREETYPE2_PC_IN)
+ 
+     string(REPLACE ";" ", " PKG_CONFIG_REQUIRED_PRIVATE "${PKG_CONFIG_REQUIRED_PRIVATE}")

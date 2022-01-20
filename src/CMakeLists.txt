@@ -31,6 +31,7 @@ if(WIN32)
             -static
             -static-libgcc
             -static-libstdc++
+            -lopengl32
     )
 elseif(UNIX AND NOT APPLE)
    target_link_libraries(project_libraries
@@ -38,6 +39,7 @@ elseif(UNIX AND NOT APPLE)
             -static-libgcc
             -static-libstdc++
             -lm
+            GL
    )
 elseif(APPLE)
 endif()
@@ -49,7 +51,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}_plugin
         project_warnings
         project_libraries
         Threads::Threads
-        GL
         cairo
         freetype
         pixman

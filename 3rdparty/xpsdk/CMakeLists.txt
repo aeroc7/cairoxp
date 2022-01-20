@@ -17,12 +17,11 @@ ExternalProject_Get_Property(xpsdk-build SOURCE_DIR)
 add_library(xpsdk INTERFACE)
 target_include_directories(xpsdk INTERFACE ${SOURCE_DIR}/CHeaders/XPLM)
 
-if(ENABLE_XPLANE_BUILD)
-    if(WIN32)
-        target_link_libraries(xpsdk INTERFACE ${SOURCE_DIR}/Libraries/Win/XPLM_64.lib)
-    elseif(APPLE)
-        target_link_libraries(xpsdk INTERFACE "-F${SOURCE_DIR}/Libraries/Mac/ -framework XPLM")
-    endif()
+
+if(WIN32)
+    target_link_libraries(xpsdk INTERFACE ${SOURCE_DIR}/Libraries/Win/XPLM_64.lib)
+elseif(APPLE)
+    target_link_libraries(xpsdk INTERFACE "-F${SOURCE_DIR}/Libraries/Mac/ -framework XPLM")
 endif()
 
 # Supported SDK versions
