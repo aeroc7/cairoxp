@@ -11,7 +11,6 @@ ExternalProject_Add(pixman-build
     URL_HASH            SHA256=e44eba32adab5204f16e7f86cb9004d01ca570c38985b7a9c21fd8815ad3e844
     CONFIGURE_COMMAND   meson build --prefix=<INSTALL_DIR> --libdir "lib" --buildtype release
                         --default-library=static -D openmp=disabled -D gtk=disabled -D libpng=disabled
-                        -D tests=disabled
     PATCH_COMMAND       patch
                         -u <SOURCE_DIR>/test/meson.build
                         -i ${CMAKE_CURRENT_LIST_DIR}/pixman_prng_test_failure.patch
