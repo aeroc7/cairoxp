@@ -24,6 +24,7 @@ Firstly, you need to clone the repository: `git clone https://github.com/aeroc7/
 
 ## Windows (using MinGW on [MSYS2](https://www.msys2.org/))
 You require the following dependencies:
+
 **Install from the MSYS2 MSYS terminal:**
 ```
 pacman -S mingw-w64-x86_64-toolchain
