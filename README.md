@@ -10,6 +10,29 @@ Due to the rendering occuring on a background thread, separate from X-Plane, the
 
 ![Performance](https://github.com/aeroc7/cairoxp/blob/main/screenshots/performance.png)
 
+## Custom font loading
+Through the Cairo FreeType backend, font loading of custom fonts in [various formats](https://freetype.org/freetype2/docs/ft2faq.html) is possible. The [cairo_font.cpp](https://github.com/aeroc7/cairoxp/blob/main/src/cairo_font.cpp) file provides a `CairoFontLoader` class which abstracts away the FreeType api, and generates a Cairo font face. A minimal example is provided below:
+
+```c++
+// draw.h
+...
+
+std::unique_ptr<CairoFontLoader> font_load;
+
+// draw.cpp
+...
+// Load our custom font from a path on our computer.
+font_load = std::make_unique<CairoFontLoader>("/path/to/my/font/file");
+
+...
+
+// Set the font face to our custom font
+cairo_set_font_face(cr, font_load->font_face());
+
+```
+
+![CustomFonts](https://github.com/aeroc7/cairoxp/blob/main/screenshots/custom_fonts.png)
+
 ## How it works
 [cairo_mt.cpp](https://github.com/aeroc7/cairoxp/blob/main/src/cairo_mt.cpp) provides a wrapper around all of the operations needed in the background. This includes:
 - Managing the render thread that calls the callbacks you provide (start, draw loop, stop)

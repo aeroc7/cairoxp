@@ -20,7 +20,7 @@ target_compile_definitions(project_options INTERFACE
 )
 
 # X-Plane plugin
-add_library(${CMAKE_PROJECT_NAME}_plugin SHARED xplane.cpp cairo_mt.cpp draw.cpp gl_pbo.cpp)
+add_library(${CMAKE_PROJECT_NAME}_plugin SHARED xplane.cpp cairo_mt.cpp draw.cpp gl_pbo.cpp cairo_font.cpp)
 
 # Link our project libraries
 add_library(project_libraries INTERFACE)
