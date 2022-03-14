@@ -95,5 +95,5 @@ Xcode Command line tools
 - - Generate a release build with CMake `cmake -DCMAKE_BUILD_TYPE=Release ..`
   - You may also want to set an install location with `-DCMAKE_INSTALL_PREFIX=your/install/directory` (The proper X-Plane plugin folder structure will be generated automatically as well)
   - - Start the build process with `make -j[num_cpus + 1]`
-  - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
+  - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1 
 - Install with `make install`
