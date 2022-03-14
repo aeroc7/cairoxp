@@ -82,3 +82,18 @@ You require the following dependencies:
   - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
 - Install with `make install`
 
+
+## MacOS (tested on MacOS Monterey)
+You require the following dependencies:
+```brew install cmake
+brew install meson
+brew install pip
+brew install python3
+Xcode Command line tools
+```
+- Create a build directory `mkdir build && cd build`
+- - Generate a release build with CMake `cmake -DCMAKE_BUILD_TYPE=Release ..`
+  - You may also want to set an install location with `-DCMAKE_INSTALL_PREFIX=your/install/directory` (The proper X-Plane plugin folder structure will be generated automatically as well)
+  - - Start the build process with `make -j[num_cpus + 1]`
+  - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
+- Install with `make install`
