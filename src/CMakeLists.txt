@@ -42,6 +42,18 @@ elseif(UNIX AND NOT APPLE)
             GL
    )
 elseif(APPLE)
+   target_link_libraries(project_libraries
+        INTERFACE
+
+            -lm
+	
+          "-framework Foundation"
+	"-framework ApplicationServices"
+	"-framework OpenGL"
+
+   )
+
+
 endif()
 
 target_link_libraries(${CMAKE_PROJECT_NAME}_plugin
