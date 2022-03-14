@@ -84,7 +84,7 @@ You require the following dependencies:
 
 
 ## MacOS (tested on MacOS Monterey)
-You require the following dependencies:
+You require the following dependencies (there may be more I forgot):
 ```brew install cmake
 brew install meson
 brew install pip
