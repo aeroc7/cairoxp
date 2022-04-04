@@ -81,4 +81,3 @@ You require the following dependencies:
 - Start the build process with `make -j[num_cpus + 1]`
   - Replace the `[num_cpus + 1]` with the number of cpus your processor has + 1 (`cat /proc/cpuinfo | grep "siblings"`)
 - Install with `make install`
-
