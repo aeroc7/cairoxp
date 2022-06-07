@@ -12,11 +12,11 @@ CairoFontLoader::CairoFontLoader(const std::vector<unsigned char> &fdata) {
 CairoFontLoader::CairoFontLoader(const std::string &filename) {
     std::ifstream file(filename, std::ios::binary);
 
-    auto get_file_size = [](std::ifstream &file) {
-        file.ignore(std::numeric_limits<std::streamsize>::max());
-        const std::streamsize len = file.gcount();
-        file.clear();
-        file.seekg(0, std::ios_base::beg);
+    auto get_file_size = [](std::ifstream &f) {
+        f.ignore(std::numeric_limits<std::streamsize>::max());
+        const std::streamsize len = f.gcount();
+        f.clear();
+        f.seekg(0, std::ios_base::beg);
         return len;
     };
 
