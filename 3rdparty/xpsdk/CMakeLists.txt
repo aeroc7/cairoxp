@@ -1,5 +1,5 @@
 # X-Plane SDK version 303
-set(DEP_XPLANE_SDK_VERSION "303")
+set(DEP_XPLANE_SDK_VERSION "410")
 set(DEP_XPLANE_SDK_LOC "https://developer.x-plane.com/wp-content/plugins/code-sample-generation/sdk_zip_files/XPSDK410.zip")
 
 include(ExternalProject)
