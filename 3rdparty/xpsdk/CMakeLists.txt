@@ -1,12 +1,12 @@
 # X-Plane SDK version 303
 set(DEP_XPLANE_SDK_VERSION "303")
-set(DEP_XPLANE_SDK_LOC "http://developer.x-plane.com/wp-content/plugins/code-sample-generation/sample_templates/XPSDK303.zip")
+set(DEP_XPLANE_SDK_LOC "https://developer.x-plane.com/wp-content/plugins/code-sample-generation/sdk_zip_files/XPSDK410.zip")
 
 include(ExternalProject)
 
 ExternalProject_Add(xpsdk-build
     URL                 ${DEP_XPLANE_SDK_LOC}
-    URL_HASH            SHA256=11a550dc553876d8c0b7187ae2e1c7e9fee5909dce6d8469720cad51e5bcb7ff
+    URL_HASH            SHA256=380a9fdb106b75479e4d90dc262ab26da76ff94bc7df4f98f42c0328fe57cad9
     CONFIGURE_COMMAND   ""
     BUILD_COMMAND       ""
     INSTALL_COMMAND     ""
